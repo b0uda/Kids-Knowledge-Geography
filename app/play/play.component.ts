@@ -32,7 +32,7 @@ const orientation = require("nativescript-orientation");
 export class PlayComponent implements OnInit {
   @ViewChild("gridLayout") gridLayout: ElementRef;
   @ViewChild("questionLabel") questionLabel: ElementRef;
-  @ViewChild("image") image: ElementRef;
+
   @ViewChild("answerImg0") answerImg0: ElementRef;
   @ViewChild("answerImg1") answerImg1: ElementRef;
   @ViewChild("answerImg2") answerImg2: ElementRef;
@@ -109,7 +109,7 @@ export class PlayComponent implements OnInit {
     this.questionIndex++;
 
     // go home after end of correction
-    if (this.questionIndex >= this.questions.length) {
+    if (this.questionIndex >= 4) {
       // this.routerExtensions.navigate(['/score'])
       this.routerExtensions.navigate(["home"], { clearHistory: true });
     }
@@ -273,7 +273,7 @@ export class PlayComponent implements OnInit {
     this._questionLabel = <Label>this.questionLabel.nativeElement;
     // _question.top = screen.mainScreen.heightPixels / 4;
 
-    const _questionImg = <Image>this.image.nativeElement;
+    // const _questionImg = <Image>this.image.nativeElement;
     // const x = _questionImg.getActualSize().height;
 
     this.answerI0 = <Image>this.answerImg0.nativeElement;
@@ -408,7 +408,7 @@ export class PlayComponent implements OnInit {
       });
 
       // }, 1200);
-      if (this.questionIndex >= this.questions.length - 1) {
+      if (this.questionIndex >= 4) {
         // if (this.questionIndex >= 2) {
         // this.routerExtensions.navigate(['/score'])
         this.routerExtensions.navigateByUrl(`/score/${this.score}/${this.mode}`, { clearHistory: true });
