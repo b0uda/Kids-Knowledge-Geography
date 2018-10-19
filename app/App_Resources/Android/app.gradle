@@ -8,7 +8,7 @@
 android {  
   defaultConfig {  
     generatedDensities = []
-    applicationId = "com.mobileweb.brainexercise"  
+    applicationId = "com.mobileweb.kidsknowledgegeography"  
   }  
   aaptOptions {  
     additionalParameters "--no-version-vectors"  
