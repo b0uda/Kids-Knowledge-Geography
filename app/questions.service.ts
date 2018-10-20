@@ -5,287 +5,217 @@ export class QuestionsService {
 
   playerAnswers: Array<number> = [];
 
-  scienceQuestions: Array<IQuestion> = [
+  oceansQuestions: Array<IQuestion> = [
     {
       id: 0,
-      q: "How many teeth should an adult have including their wisdom teeth?",
-      choices: ["32", "34", "33", "28"],
-      a: 0,
+      q: "Grenada is situated in the",
+      choices: ["Pacific Ocean", "Indian Ocean", "Caribbean Sea", "Mediterranean Sea"],
+      a: 2,
       rate: 0,
-      hint: "32"
+      hint: "Caribbean Sea"
     }, {
       id: 1,
-      q: "What is the name of the organ that we use to breath in oxygen?",
-      choices: ["Kidneys", "Lungs", "Stomach", "Liver"],
-      a: 1,
+      q: "The South Alps ranges are found in",
+      choices: ["North America", "Canada", "South Africa", "Australia"],
+      a: 3,
       rate: 0,
-      hint: "Lungs"
+      hint: "Australia"
     }, {
       id: 2,
-      q: "What is the name of the organ that pumps blood around the body?",
-      choices: ["Prostate", "Arteries", "Veins", "Heart"],
-      a: 3,
+      q: "Which among the following is the biggest island in the world?",
+      choices: ["Borneo", "Madagascar", "Greenland", "Sir Lanka"],
+      a: 2,
       rate: 0,
-      hint: "Heart"
+      hint: "Greenland"
     }, {
       id: 3,
-      q: "What makes up 80% of our brains?",
-      choices: ["Water", "Carbon", "Calcium", "Sodium"],
-      a: 0,
+      q: "Zurich is a city in",
+      choices: ["Canada", "Switzerland", "U.S.A.", "None of these"],
+      a: 1,
       rate: 0,
-      hint: "Water"
+      hint: "Switzerland"
     }, {
       id: 4,
-      q: "Where is the smallest bone in your body?",
-      choices: ["Nose", "Ears", "Hands", "Legs"],
-      a: 1,
+      q: "	Fiji is a country in the",
+      choices: ["South Pacific", "	East Pacific", "North Pacific", "West Pacific"],
+      a: 0,
       rate: 0,
-      hint: "Ears"
+      hint: "South Pacific"
     }, {
       id: 5,
-      q: "Where is the largest bone in your body?",
-      choices: ["Legs", "Hands", "Ears", "Nose"],
-      a: 0,
+      q: "The largest producer of manganese in the world is",
+      choices: ["China", "South Africa", "U.S.S.R.", "U.S.A."],
+      a: 1,
       rate: 0,
-      hint: "Legs"
+      hint: "South Africa"
     }, {
       id: 6,
-      q: "How many ribs are there in the human body?",
-      choices: ["16", "18", "22", "24"],
-      a: 3,
+      q: "The top ranking country in the production of rubber is",
+      choices: ["India", "Brazil", "Thailand", "Sri Lanka"],
+      a: 2,
       rate: 0,
-      hint: "Twenty-four (24). Humans have 12 pairs of ribs / 24 ribs in total"
+      hint: "Thailand"
     }, {
       id: 7,
-      q: "What is the strongest muscle in your body?",
-      choices: ["Ears", "hands", "Tongue", "Legs"],
-      a: 2,
+      q: "Rome is the capital of",
+      choices: ["Sweden", "Italy", "Canada", "Austria"],
+      a: 1,
       rate: 0,
-      hint: "Tongue"
+      hint: "Italy"
     }, {
       id: 8,
-      q: "Which colour eyes do more humans have?",
-      choices: ["Black", "Brown", "Green", "Blue"],
+      q: "The river 'Nile' is in",
+      choices: ["USA", "Egypt", "Mongolia", "India"],
       a: 1,
       rate: 0,
-      hint: "Brown"
+      hint: "Egypt"
     }, {
       id: 9,
-      q: "What is the name of the tube that carries blood to the heart?",
-      choices: ["Pancreas", "Capillaries", "Arteries", "Veins"],
-      a: 3,
+      q: "Myanmar is the new name of",
+      choices: ["Thailand", "Malaysia", "Burma", "Bhutan"],
+      a: 2,
       rate: 0,
-      hint: "Vein"
+      hint: "Burma"
     }, {
       id: 10,
-      q: "How many moons does planet Mars have?",
-      choices: ["1", "2", "3", "4"],
-      a: 1,
+      q: "Saikan, the longest railway tunnel, is located in",
+      choices: ["Egypt", "Switzerland", "Japan", "Namibia"],
+      a: 2,
       rate: 0,
-      hint: "Two – they are called Phobos and Deimos"
+      hint: "Japan"
     }, {
       id: 11,
-      q: "Which planet is closest to the sun?",
-      choices: ["Uranus", "Venus", "Mars", "Mercury"],
-      a: 3,
+      q: "Which is the largest continent of the world?",
+      choices: ["Asia", "North America", "Australia", "Africa"],
+      a: 0,
       rate: 0,
-      hint: "Mercury"
+      hint: "Asia"
     }, {
       id: 12,
-      q: "What is the largest planet in our solar system?",
-      choices: ["Jupiter", "Mars", "Earth", "Neptune"],
-      a: 0,
+      q: "	Which of the following is the smallest country?",
+      choices: ["Japan", "Nicaragua", "Switzerland", "Belgium"],
+      a: 3,
       rate: 0,
-      hint: "Jupiter"
+      hint: "Belgium"
     }, {
       id: 13,
-      q: "How many days does the Moon take to orbit the Earth?",
-      choices: ["18", "27", "25", "30"],
-      a: 1,
+      q: "The largest jute producing country in the world is",
+      choices: ["Bangladesh", "Brazil", "Congo", "India"],
+      a: 3,
       rate: 0,
-      hint: "27 days (To be exact it takes 27 days, 7 hours, 43 minutes, 11.6 seconds)"
+      hint: "India"
     }, {
       id: 14,
-      q: "Neptune has eight moons, what is the name of the biggest one?",
-      choices: ["Despina", "Larissa", "Triton", "Naiad"],
-      a: 2,
+      q: "Mount Everest is locted in",
+      choices: ["Nepal", "Thailand", "India", "Bhutan"],
+      a: 0,
       rate: 0,
-      hint: "Triton"
+      hint: "Nepal"
     }, {
       id: 15,
-      q: "Which dwarf planet shares the same name as a famous Disney dog?",
-      choices: ["Mars", "Jupiter", "Venus", "Pluto"],
-      a: 3,
+      q: "The largest reserve of fresh water on the earth's surface is in",
+      choices: ["Russia", "Africa", "South America", "Australia"],
+      a: 0,
       rate: 0,
-      hint: "Pluto"
+      hint: "Russia"
     }, {
       id: 16,
-      q: "What is the name of the first man to set foot on the moon?",
-      choices: ["Neil Armstrong", "Charles Duke", "Pete Conrad", "John Young"],
+      q: "The Niagara Falls is in",
+      choices: ["North America", "South America", "Africa", "Europe"],
       a: 0,
       rate: 0,
-      hint: "Neil Armstrong"
+      hint: "North America"
     }, {
       id: 17,
-      q: "How many rings does Saturn have around it?",
-      choices: ["5", "6", "7", "8"],
-      a: 2,
+      q: "Chad is in which part of Africa?",
+      choices: ["Central", "Eastern", "Northern", "Western"],
+      a: 0,
       rate: 0,
-      hint: "Seven (7)"
+      hint: "Central"
     }, {
       id: 18,
-      q: "What is the closest star to the Earth?",
-      choices: ["Wolf 359", "Sun", "Sirius", "Ross 154"],
-      a: 1,
+      q: "Which is the longest river in the world?",
+      choices: ["Amazon", "Mississippi", "Nile", "Ganges"],
+      a: 0,
       rate: 0,
-      hint: "The Sun"
+      hint: "Amazon"
     }, {
       id: 19,
-      q: "Which tree produces acorns?",
-      choices: ["Black Cherry", "Hawthorn", "Butternut", "Oak Tree"],
-      a: 3,
+      q: "The greatest mass of ice on the earth is found in",
+      choices: ["Siberia", "Antarctica", "Greenland", "Canada"],
+      a: 1,
       rate: 0,
-      hint: "Oak Tree"
+      hint: "Antarctica"
     }, {
       id: 20,
-      q: "What type of flower is used by children to make a chain?",
-      choices: ["Roses", "Tulips", "Daisies", "Lotus"],
-      a: 2,
+      q: "Which of the following is not a capital city?",
+      choices: ["Ulan Bator", "Frankfurt", "Berlin", "Ankara"],
+      a: 1,
       rate: 0,
-      hint: "Daisies"
+      hint: "Frankfurt"
     }, {
       id: 21,
-      q: "Which flower has big bright yellow petals and grows very, very tall?",
-      choices: ["Sunflower", "Daisies", "Coneflower", "Tulips"],
-      a: 0,
+      q: "Which country is known as the 'sugar bowl of the world?",
+      choices: ["China", "Cuba", "India", "Australia"],
+      a: 1,
       rate: 0,
-      hint: "Sunflower"
+      hint: "Cuba"
     }, {
       id: 22,
-      q: "What 'C' is a prickly plant that grows in the desert?",
-      choices: ["Calluna", "Cactus", "Caltha", "Cissus"],
+      q: "Which South Asian country is known as the Land of Canals?",
+      choices: ["Burma", "Pakistan", "Bangladesh", "Bhutan"],
       a: 1,
       rate: 0,
-      hint: "Cactus"
+      hint: "Pakistan"
     }, {
       id: 23,
-      q: "What type of gas is provided by trees and helps us to breathe?",
-      choices: ["Oxygen", "Hydrogen", "Nitrogen", "Sulfur"],
-      a: 0,
+      q: "Cotopaxi, the highest volcano in the world is situated in",
+      choices: ["Alaska", "Russia", "Hawaii", "Ecuador Andes"],
+      a: 3,
       rate: 0,
-      hint: "Oxygen"
+      hint: "Ecuador Andes"
     }, {
       id: 24,
-      q: "Which type of Japanese tree is very small and grown in a pot?",
-      choices: ["Cherry", "Kanzan", "Prunus", "Bonsai"],
+      q: "Budapest is situated on the bank of the river",
+      choices: ["Tigris", "St Lawrence", "La Plata", "Danube"],
       a: 3,
       rate: 0,
-      hint: "Bonsai"
+      hint: "Danube"
     }, {
       id: 25,
-      q: "What type of substance is produced by flowers and sometimes causes hay fever?",
-      choices: ["Nitrogen", "Pollen", "Hydrogen", "Sulfur"],
-      a: 1,
+      q: "Which country is known as the 'Pearl of the East?",
+      choices: ["Bhutan", "Bangladesh", "Sri Lanka", "Philippines"],
+      a: 3,
       rate: 0,
-      hint: "Pollen"
+      hint: "Philippines"
     }, {
       id: 26,
-      q: "What type of red flower do people often give one another on Valentine's Day?",
-      choices: ["Red Roses", "Cardinal", "Poppy", "Red carnation"],
-      a: 0,
+      q: "Nicosia is the capital of",
+      choices: ["Tunis", "South Africa", "Canada", "Cyprus"],
+      a: 3,
       rate: 0,
-      hint: "Red Roses"
+      hint: "Cyprus"
     }, {
       id: 27,
-      q: "Besides light, what do trees and flowers require to grow?",
-      choices: ["Pollen", "Oxygen", "Water", "Vitamine"],
+      q: "The largest Tea producer in the world is",
+      choices: ["Russia", "China", "India", "Burma"],
       a: 2,
       rate: 0,
-      hint: "Water"
+      hint: "India"
     }, {
       id: 28,
-      q: "What type of system circulates blood around the body?",
-      choices: ["Digestive", "Respiratory", "Circularity", "Nervous"],
+      q: "The largest coffee, producing country in the world is",
+      choices: ["China", "Columbia", "Brazil", "India"],
       a: 2,
       rate: 0,
-      hint: "Circularity System"
+      hint: "Brazil"
     }, {
       id: 29,
-      q: "Which of the following is not a type of tooth?",
-      choices: ["Incisor", "Retina", "Molar", "Canine"],
-      a: 1,
-      rate: 0,
-      hint: "Retina"
-    }, {
-      id: 30,
-      q: "What part of the human skeleton protects the brain?",
-      choices: ["Rib cage", "Pelvis", "Skull", "Earlobe"],
-      a: 2,
-      rate: 0,
-      hint: "Skull"
-    }, {
-      id: 31,
-      q: "What colour is a Ruby gemstone?",
-      choices: ["Red", "Orange", "Cyan", "Green"],
+      q: "The largest sugarcane producing country in the world is",
+      choices: ["Brazil", "China", "India", "Cuba"],
       a: 0,
       rate: 0,
-      hint: "Red"
-    }, {
-      id: 32,
-      q: "What is the chemical symbol for oxygen?",
-      choices: ["Ox", "O", "X", "Oc"],
-      a: 1,
-      rate: 0,
-      hint: "O"
-    }, {
-      id: 33,
-      q: "Which human body system breaks down food?",
-      choices: ["Circulatory", "Nervous", "Respiratory", "Digestive"],
-      a: 3,
-      rate: 0,
-      hint: "Digestive system"
-    }, {
-      id: 34,
-      q: "Who created the famous equation: E = mc2?",
-      choices: ["Thomas Edison", "Marie Curie", "Stephen Hawking", "Albert Einstein"],
-      a: 3,
-      rate: 0,
-      hint: "Albert Einstein"
-    }, {
-      id: 35,
-      q: "Which planet is the smallest?",
-      choices: ["Neptune", "Jupiter", "Mars", "Mercury"],
-      a: 3,
-      rate: 0,
-      hint: "Mercury"
-    }, {
-      id: 36,
-      q: "Which planet is furthest from the Sun?",
-      choices: ["Neptune", "Mars", "Mercury", "Jupiter"],
-      a: 0,
-      rate: 0,
-      hint: "Neptune"
-    }, {
-      id: 37,
-      q: "How many inner planets are there in our solar system?",
-      choices: ["3", "2", "4", "5"],
-      a: 2,
-      rate: 0,
-      hint: "Four: Mercury, Venus, Earth, Mars"
-    }, {
-      id: 38,
-      q: "What is the chemical symbol for Sodium?",
-      choices: ["Na", "S", "So", "N"],
-      a: 0,
-      rate: 0,
-      hint: "Na"
-    }, {
-      id: 39,
-      q: "What is the chemical symbol for Gold?",
-      choices: ["Go", "Au", "G", "A"],
-      a: 1,
-      rate: 0,
-      hint: "Au"
+      hint: "Brazil"
     }
   ];
 
@@ -604,7 +534,334 @@ export class QuestionsService {
 
   ];
 
-  geoQuestions: Array<IQuestion> = [
+  earthQuestions: Array<IQuestion> = [
+
+    {
+      id: 0,
+      q: "Which country is Paris the capital of?",
+      choices: ["Greece", "Spain", "Italy", "France"],
+      a: 3,
+      rate: 0,
+      hint: "paris"
+    },
+    {
+      id: 1,
+      q: "What is the capital of Australia?",
+      choices: ["Bathurst", "Sydney", "Canberra", "Dubbo"],
+      a: 2,
+      rate: 0,
+      hint: "Canberra"
+    },
+    {
+      id: 2,
+      q: "What is the capital of Germany?",
+      choices: ["Jena", "Frankfurt", "Nice", "Berlin"],
+      a: 3,
+      rate: 0,
+      hint: "Berlin"
+    },
+    {
+      id: 3,
+      q: "Which country is Washington DC the capital of?",
+      choices: ["Romania", "America", "Italy", "Mexico"],
+      a: 1,
+      rate: 0,
+      hint: "America"
+    },
+    {
+      id: 4,
+      q: "Which country is Madrid the capital of?",
+      choices: ["Spain", "Poland", "Italy", "Austria"],
+      a: 0,
+      rate: 0,
+      hint: "Spain"
+    },
+    {
+      id: 5,
+      q: "What is the capital of Cuba?",
+      choices: ["Holguín", "Havana", "Matanzas", "Bayamo"],
+      a: 1,
+      rate: 0,
+      hint: "Havana"
+    },
+    {
+      id: 6,
+      q: "What is the capital of New Zealand?",
+      choices: ["Nelson", "Dunedin", "Tauranga", "Wellington"],
+      a: 3,
+      rate: 0,
+      hint: "Wellington"
+    }
+    ,
+    {
+      id: 7,
+      q: "What is the capital of Thailand?",
+      choices: ["Pattaya", "Krabi", "Bangkok", "Chonburi"],
+      a: 2,
+      rate: 0,
+      hint: "Bangkok"
+    },
+    {
+      id: 8,
+      q: "Which country is Cairo the capital of?",
+      choices: ["Algeria", "Morocco", "Egypt", "Tunisa"],
+      a: 2,
+      rate: 0,
+      hint: "Egypt"
+    },
+    {
+      id: 9,
+      q: "What is the capital of England?",
+      choices: ["Liverpool", "London", "Manchester", "Bristol"],
+      a: 1,
+      rate: 0,
+      hint: "London"
+    },
+    {
+      id: 10,
+      q: "What is the national capital city of Canada?",
+      choices: ["Calgary", "Montreal", "Barrie", "Ottawa"],
+      a: 3,
+      rate: 0,
+      hint: "Ottawa"
+    },
+    {
+      id: 11,
+      q: "What is the capital of Mexico?",
+      choices: ["Mexico City", "Puebla", "Cancún", "Monterrey"],
+      a: 0,
+      rate: 0,
+      hint: "Mexico City"
+    }
+    ,
+    {
+      id: 12,
+      q: "Which country is Tokyo the capital of?",
+      choices: ["India", "China", "Japan", "Thailand"],
+      a: 2,
+      rate: 0,
+      hint: "Japan"
+    },
+    {
+      id: 13,
+      q: "Which country is Lisbon the capital of?",
+      choices: ["Portugal", "Brazil", "India", "Angola"],
+      a: 0,
+      rate: 0,
+      hint: "Portugal"
+    },
+    {
+      id: 14,
+      q: "What is the capital of Morocco?",
+      choices: ["Kenitra", "Rabat", "Marrakesh", "Casablanca"],
+      a: 1,
+      rate: 0,
+      hint: "Rabat"
+    },
+    {
+      id: 15,
+      q: "What planet is nearest to the Earth?",
+      choices: ["Venus", "Uranus", "Neptune", "Mercury"],
+      a: 0,
+      rate: 0,
+      hint: "Venus"
+    },
+    {
+      id: 16,
+      q: "What is the name of the active volcano in Sicily?",
+      choices: ["Ischia", "MountEtna", "Filicudi", "Panarea"],
+      a: 1,
+      rate: 0,
+      hint: "Mount Etna"
+    },
+    {
+      id: 17,
+      q: "In which country would you find the pyramids?",
+      choices: ["Morocco", "Italy", "Egypt", "India"],
+      a: 2,
+      rate: 0,
+      hint: "Egypt"
+    },
+    {
+      id: 18,
+      q: "In which State of America would you find Las Vegas?",
+      choices: ["Nevada", "California", "Texas", "Georgia"],
+      a: 0,
+      rate: 0,
+      hint: "Nevada"
+    },
+    {
+      id: 19,
+      q: "Which country is the second biggest in the world?",
+      choices: ["America", "Canada", "China", "India"],
+      a: 1,
+      rate: 0,
+      hint: "Canada"
+    },
+    {
+      id: 20,
+      q: "Where is the biggest railway station in the world?",
+      choices: ["India", "Russia", "Germany", "New York"],
+      a: 3,
+      rate: 0,
+      hint: "New York City (Grand Central Terminal)"
+    },
+    {
+      id: 21,
+      q: "Which continent is Mount Kilimanjaro located on?",
+      choices: ["America", "Africa", "Asia", "Europe"],
+      a: 1,
+      rate: 0,
+      hint: "Africa"
+    },
+    {
+      id: 22,
+      q: "What is the name of the river that runs through the Grand Canyon?",
+      choices: ["Colorado", "Nile", "Mekong", "Loire"],
+      a: 0,
+      rate: 0,
+      hint: "Colorado"
+    },
+    {
+      id: 23,
+      q: "What is the largest country in Scandinavia?",
+      choices: ["Denmark", "Norway", "Iceland", "Sweden"],
+      a: 3,
+      rate: 0,
+      hint: "Sweden"
+    }, {
+      id: 24,
+      q: "Which is the largest Ocen on earth?",
+      choices: ["Pacific", "Atlantic", "Arctic", "Southern"],
+      a: 0,
+      rate: 0,
+      hint: "Pacific"
+    },
+    {
+      id: 25,
+      q: "In which continent is Greece located on?",
+      choices: ["America", "Asia", "Europe", "Africa"],
+      a: 2,
+      rate: 0,
+      hint: "Europe"
+    },
+    {
+      id: 26,
+      q: "Which country is attached to the United States?",
+      choices: ["Mexico", "Greenland", "Colombia", "Argentina"],
+      a: 0,
+      rate: 0,
+      hint: "Mexico"
+    },
+    {
+      id: 27,
+      q: "What is the hottest continent on Earth?",
+      choices: ["America", "Africa", "Asia", "Europe"],
+      a: 1,
+      rate: 0,
+      hint: "Africa"
+    },
+    {
+      id: 28,
+      q: "Which country is Canberra the capital city of?",
+      choices: ["Australia", "Fiji", "China", "Argentina"],
+      a: 0,
+      rate: 0,
+      hint: "Australia"
+    },
+    {
+      id: 29,
+      q: "Which of the following words describes a severe snowstorm with strong winds: ",
+      choices: ["Avalanche", "Snow Flurry", "Snow Showers", "Blizzard"],
+      a: 3,
+      rate: 0,
+      hint: "Blizzard"
+    },
+    {
+      id: 30,
+      q: "Which of the following is not a type of fossil fuel?",
+      choices: ["Petrol", "Coal", "Sand", "Oil"],
+      a: 2,
+      rate: 0,
+      hint: "Sand"
+    },
+    {
+      id: 31,
+      q: "Where do stalactites and stalagmites form?",
+      choices: ["Sand", "Sky", "Ocean", "Caves"],
+      a: 3,
+      rate: 0,
+      hint: "Caves"
+    },
+    {
+      id: 32,
+      q: "Can you unscramble the following word to reveal a huge storm with high winds: RCIRNEAHU",
+      choices: ["Hurricane", "Windstorm", "Tempest", "Whirlwind"],
+      a: 0,
+      rate: 0,
+      hint: "Hurricane"
+    },
+    {
+      id: 33,
+      q: "Which of the following is not a country?",
+      choices: ["Finland", "Morocco", "France", "Cairo"],
+      a: 3,
+      rate: 0,
+      hint: "Cairo"
+    },
+    {
+      id: 34,
+      q: "What are the Ganges, Mississippi, Thames, Seine and Volga are all types of?",
+      choices: ["mountains", "Countries", "Rivers", "Oceans"],
+      a: 2,
+      rate: 0,
+      hint: "Rivers"
+    },
+    {
+      id: 35,
+      q: "Which ocean is situated to the west of North and South America?",
+      choices: ["Pacific", "Atlantic", "Arctic", "Indian"],
+      a: 0,
+      rate: 0,
+      hint: "Pacific"
+    },
+    {
+      id: 36,
+      q: "The River Seine flows through which European capital city?",
+      choices: ["Madrid", "London", "Paris", "Berlin"],
+      a: 2,
+      rate: 0,
+      hint: "Paris"
+    },
+    {
+      id: 37,
+      q: "Which layer of planet Earth is made up of tectonic plates?",
+      choices: ["Inner Core", "Outer Core", "Mantle", "Crust"],
+      a: 3,
+      rate: 0,
+      hint: "Crust"
+    },
+    {
+      id: 38,
+      q: "Convection, Frontal and Relief are the three main types of",
+      choices: ["Clouds", "Rainfall", "Winds", "Trees"],
+      a: 1,
+      rate: 0,
+      hint: "Rainfall"
+    },
+    {
+      id: 39,
+      q: "What type of biome is the Sahara?",
+      choices: ["Desert", "Rainforest", "Tundra", "Ocean"],
+      a: 0,
+      rate: 0,
+      hint: "Desert"
+    }
+  ];
+
+
+
+  capitalsQuestions: Array<IQuestion> = [
 
     {
       id: 0,

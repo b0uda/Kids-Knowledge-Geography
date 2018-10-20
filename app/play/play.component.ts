@@ -79,19 +79,27 @@ export class PlayComponent implements OnInit {
       });
 
     switch (this.mode) {
-      case "geo":
-        this.questions = questionService.geoQuestions;
+      case "capitals":
+        this.questions = questionService.capitalsQuestions;
         break;
       case "general":
         this.questions = questionService.generalQuestions;
         break;
-      case "science":
-        this.questions = questionService.scienceQuestions;
+      case "oceans":
+        this.questions = questionService.oceansQuestions;
+        break;
+        case "earth":
+        this.questions = questionService.earthQuestions;
         break;
 
       default:
         break;
+
     }
+
+    this.questions = this.shuffle(this.questions);
+    this.questions = this.questions.slice(1 , 21);
+    console.log(this.questions);
 
     this.questionIndex = 0;
     this.questionCurrent = this.questions[0];
@@ -106,13 +114,14 @@ export class PlayComponent implements OnInit {
   }
 
   nextCorrection() {
-    this.questionIndex++;
 
     // go home after end of correction
-    if (this.questionIndex >= 4) {
-      // this.routerExtensions.navigate(['/score'])
+    if (this.questionIndex >= this.questions.length - 1) {
       this.routerExtensions.navigate(["home"], { clearHistory: true });
+      return;
     }
+
+    this.questionIndex++;
 
     this.questionCurrent = this.questions[this.questionIndex];
 
@@ -128,6 +137,27 @@ export class PlayComponent implements OnInit {
     // switch the player answer for first question "need to be on ngInit()"
 
     this.testPlayerAnswer();
+  }
+
+  shuffle(array) {
+    let currentIndex = array.length;
+    let temporaryValue ;
+    let randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+
+    return array;
   }
 
   goHome() {
@@ -408,9 +438,10 @@ export class PlayComponent implements OnInit {
       });
 
       // }, 1200);
-      if (this.questionIndex >= 4) {
+      if (this.questionIndex >= this.questions.length) {
         // if (this.questionIndex >= 2) {
         // this.routerExtensions.navigate(['/score'])
+
         this.routerExtensions.navigateByUrl(`/score/${this.score}/${this.mode}`, { clearHistory: true });
       }
 
@@ -425,6 +456,7 @@ export class PlayComponent implements OnInit {
 
   animateAnswer0() {
     this.answerI0.className = "panel_answer animate_bigger";
+    this.answerL0.className = "answer_label animate_bigger";
     this.answerI1.className = "panel_answer animate_smaller";
     this.answerL1.className = "answer_label animate_smaller";
     this.answerI2.className = "panel_answer animate_smaller";
@@ -433,6 +465,7 @@ export class PlayComponent implements OnInit {
     this.answerL3.className = "answer_label animate_smaller";
     setTimeout(() => {
       this.answerI0.className = "panel_answer";
+      this.answerL0.className = "answer_label";
       this.answerI1.className = "panel_answer";
       this.answerL1.className = "answer_label";
       this.answerI2.className = "panel_answer";
@@ -446,6 +479,7 @@ export class PlayComponent implements OnInit {
 
   animateAnswer1() {
     this.answerI1.className = "panel_answer animate_bigger";
+    this.answerL1.className = "answer_label animate_bigger";
     this.answerI0.className = "panel_answer animate_smaller";
     this.answerL0.className = "answer_label animate_smaller";
     this.answerI2.className = "panel_answer animate_smaller";
@@ -454,6 +488,7 @@ export class PlayComponent implements OnInit {
     this.answerL3.className = "answer_label animate_smaller";
     setTimeout(() => {
       this.answerI1.className = "panel_answer";
+      this.answerL1.className = "answer_label";
       this.answerI0.className = "panel_answer";
       this.answerL0.className = "answer_label";
       this.answerI2.className = "panel_answer";
@@ -466,6 +501,7 @@ export class PlayComponent implements OnInit {
 
   animateAnswer2() {
     this.answerI2.className = "panel_answer animate_bigger";
+    this.answerL2.className = "answer_label animate_bigger";
     this.answerI0.className = "panel_answer animate_smaller";
     this.answerL0.className = "answer_label animate_smaller";
     this.answerI1.className = "panel_answer animate_smaller";
@@ -474,6 +510,7 @@ export class PlayComponent implements OnInit {
     this.answerL3.className = "answer_label animate_smaller";
     setTimeout(() => {
       this.answerI2.className = "panel_answer";
+      this.answerL2.className = "answer_label";
       this.answerI0.className = "panel_answer";
       this.answerL0.className = "answer_label";
       this.answerI1.className = "panel_answer";
@@ -486,6 +523,7 @@ export class PlayComponent implements OnInit {
 
   animateAnswer3() {
     this.answerI3.className = "panel_answer animate_bigger";
+    this.answerL3.className = "answer_label animate_bigger";
     this.answerI0.className = "panel_answer animate_smaller";
     this.answerL0.className = "answer_label animate_smaller";
     this.answerI1.className = "panel_answer animate_smaller";
@@ -494,6 +532,7 @@ export class PlayComponent implements OnInit {
     this.answerL2.className = "answer_label animate_smaller";
     setTimeout(() => {
       this.answerI3.className = "panel_answer";
+      this.answerL3.className = "answer_label";
       this.answerI0.className = "panel_answer";
       this.answerL0.className = "answer_label";
       this.answerI1.className = "panel_answer";

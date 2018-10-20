@@ -42,13 +42,13 @@
 
 @keyframes answer_animate_bigger {
     0% {
-        transform: scaleY(1);
+        transform: translateY(1);
     }
     50% {
-        transform: scaleY(1.2);
+        transform: translateY(-20%);
     }
     100% {
-        transform: scaleY(1);
+        transform: translateY(1);
     }
 }
 
@@ -73,13 +73,13 @@
     font-weight: bold;
     color: black;
     width: 50%;
-    margin-top: 95%;
+    margin-top: 93%;
     text-align: center;
     font-family: "PPETRIAL";
 }
 
 .answer_label_correct {
-    font-size: 42;
+    font-size: 32;
     font-weight: bold;
     color: green;
     width: 50%;
@@ -89,7 +89,7 @@
 }
 
 .answer_label_incorrect {
-    font-size: 42;
+    font-size: 32;
     font-weight: bold;
     color: red;
     width: 50%;
@@ -104,9 +104,6 @@
     height: 15%;
     margin-bottom: 80%;
     margin-right: 80%;
-    animation-name: next_animation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
 }
 
 .next {
@@ -124,35 +121,13 @@
         transform: scale(1);
     }
     50% {
-        transform: scale(1.3);
+        transform: scale(1.2);
     }
     100% {
         transform: scale(1);
     }
 }
 
-.solution_girl {
-    width: 20%;
-    height: 17%;
-    margin-top: 35%;
-    margin-left: 5%;
-    z-index: 100;
-    animation-name: solution_animate;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes solution_animate {
-    0% {
-        transform: translateY(0%);
-    }
-    50% {
-        transform: translateY(10%);
-    }
-    100% {
-        transform: translateY(0%);
-    }
-}
 
 .question_explanation {
     color: red;

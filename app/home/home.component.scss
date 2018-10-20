@@ -12,13 +12,13 @@ GridLayout {
 }
 
 .mode {
-    width: 33%;
+    width: 25%;
     height: 25%;
 }
 
 .animate_big {
     animation-name: animate_big;
-    animation-duration: 1s;
+    animation-duration: .5s;
 }
 
 @keyframes animate_big {

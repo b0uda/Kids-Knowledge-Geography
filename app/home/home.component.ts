@@ -20,24 +20,26 @@ const orientation = require("nativescript-orientation");
 })
 export class HomeComponent implements OnInit {
   @ViewChild("gridLayout") gridLayout: ElementRef;
-  @ViewChild("alphabet") alphabetRef: ElementRef;
-  @ViewChild("number") numberRef: ElementRef;
-  @ViewChild("symbol") symbolRef: ElementRef;
-  alphabet: Image;
-  number: Image;
-  symbol: Image;
+  @ViewChild("general") generalRef: ElementRef;
+  @ViewChild("capitals") capitalsRef: ElementRef;
+  @ViewChild("earth") earthRef: ElementRef;
+  @ViewChild("oceans") oceansRef: ElementRef;
+  general: Image;
+  capitals: Image;
+  earth: Image;
+  oceans: Image;
   router;
   stackBtn;
 
   constructor(private routerExtensions: RouterExtensions) { }
 
-  startGeo($event: EventData) {
+  startCapitals($event: EventData) {
 
-    this.alphabet.className = "mode animate_big";
+    this.capitals.className = "mode animate_big";
 
     setTimeout(() => {
-      this.alphabet.className = "mode";
-      this.routerExtensions.navigate(["/play", false, "geo"], {
+      this.capitals.className = "mode";
+      this.routerExtensions.navigate(["/play", false, "capitals"], {
         clearHistory: false,
         transition: {
           name: "fade",
@@ -51,10 +53,10 @@ export class HomeComponent implements OnInit {
 
   startGeneral($event: EventData) {
 
-    this.number.className = "mode animate_big";
+    this.general.className = "mode animate_big";
 
     setTimeout(() => {
-      this.number.className = "mode";
+      this.general.className = "mode";
       this.routerExtensions.navigate(["/play", false, "general"], {
         clearHistory: false,
         transition: {
@@ -67,13 +69,13 @@ export class HomeComponent implements OnInit {
 
   }
 
-  startScience($event: EventData) {
+  startEarth($event: EventData) {
 
-    this.symbol.className = "mode animate_big";
+    this.earth.className = "mode animate_big";
 
     setTimeout(() => {
-      this.number.className = "mode";
-      this.routerExtensions.navigate(["/play", false, "science"], {
+      this.earth.className = "mode";
+      this.routerExtensions.navigate(["/play", false, "earth"], {
         clearHistory: false,
         transition: {
           name: "fade",
@@ -84,6 +86,27 @@ export class HomeComponent implements OnInit {
     }, 1000);
 
   }
+
+
+  startOceans($event: EventData) {
+
+    this.oceans.className = "mode animate_big";
+
+    setTimeout(() => {
+      this.oceans.className = "mode";
+      this.routerExtensions.navigate(["/play", false, "oceans"], {
+        clearHistory: false,
+        transition: {
+          name: "fade",
+          duration: 900,
+          curve: "easeOut"
+        }
+      });
+    }, 1000);
+
+  }
+
+
 
   // Change Buttons Layout if orientation Changed
   orientationChangedCallback(args) {
@@ -103,9 +126,10 @@ export class HomeComponent implements OnInit {
     const _gridLayout = <GridLayout>this.gridLayout.nativeElement;
     _gridLayout.className = _deviceType.toLowerCase();
 
-    this.alphabet = <Image>this.alphabetRef.nativeElement;
-    this.number = <Image>this.numberRef.nativeElement;
-    this.symbol = <Image>this.symbolRef.nativeElement;
+    this.general = <Image>this.generalRef.nativeElement;
+    this.earth = <Image>this.earthRef.nativeElement;
+    this.capitals = <Image>this.capitalsRef.nativeElement;
+    this.oceans = <Image>this.oceansRef.nativeElement;
 
     orientation.addOrientationApplier(this.orientationChangedCallback.bind(this));
     orientation.setOrientation("portrait");
